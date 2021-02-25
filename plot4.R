@@ -4,7 +4,7 @@ Data_Date <- subset(Data, Date %in% c("1/2/2007", "2/2/2007"))
 Data_Date$Date <- as.Date(Data_Date$Date, "%d/%m/%y")
 Datetime <- paste(as.Date(Data_Date$Date), Data_Date$Time)
 Data_Date$Datetime <- as.POSIXct(Datetime)
-par(mfrow=c(2,2), mar=c(4,4,1,1), oma=c(0,0,2,0))
+par(mfrow=c(2,2), mar=c(3,3,2,1), oma=c(0,0,2,0))
 with(Data_Date, {
   plot(Global_active_power~Datetime, type="l", 
        ylab="Global Active Power", xlab="")
